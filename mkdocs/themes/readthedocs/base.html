@@ -35,6 +35,7 @@
   {%- endblock %}
 
   {%- block libs %}
+  {% import 'cdnjs.j2' as cdnjs %}
   {% if page %}
   <script>
    // Current page data
@@ -43,10 +44,9 @@
    var mkdocs_page_url = {{ page.abs_url|tojson|safe }};
   </script>
   {% endif %}
-  <script src="{{ 'js/jquery-2.1.1.min.js'|url }}" defer></script>
-  <script src="{{ 'js/modernizr-2.8.3.min.js'|url }}" defer></script>
+  <script src={{ cdnjs.load('jquery', 'jquery.min.js') }} defer></script>
+  <script src={{ cdnjs.load('modernizr', 'modernizr.min.js') }}" defer></script>
   {%- if config.theme.highlightjs %}
-  {% import 'cdnjs.j2' as cdnjs %}
   <script src={{ cdnjs.load('highlight.js', 'highlight.min.js') }}></script>
   {%- for lang in config.theme.hljs_languages %}
   <script src={{ cdnjs.load('highlight.js', 'languages/' + lang + '.min.js') }}></script>
