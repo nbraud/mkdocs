@@ -17,11 +17,11 @@
       {%- endblock %}
 
       {%- block styles %}
+        {% import 'cdnjs.j2' as cdnjs %}
         <link href="{{ 'css/bootstrap.min.css'|url }}" rel="stylesheet">
-        <link href="{{ 'css/font-awesome.min.css'|url }}" rel="stylesheet">
+        <link href={{ cdnjs.load('font-awesome', 'css/font-awesome.min.css') }} rel="stylesheet">
         <link href="{{ 'css/base.css'|url }}" rel="stylesheet">
         {%- if config.theme.highlightjs %}
-        {% import 'cdnjs.j2' as cdnjs %}
         <link rel="stylesheet"
               href={{ cdnjs.load('highlight.js', 'styles/' + config.theme.hljs_style + '.min.css') }}
         >
