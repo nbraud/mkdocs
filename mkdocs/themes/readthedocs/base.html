@@ -18,12 +18,13 @@
   {%- endblock %}
 
   {%- block styles %}
+  {% import 'cdnjs.j2' as cdnjs %}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="{{ 'css/theme.css'|url }}" />
+  <link rel="stylesheet" href={{ cdnjs.load('font-awesome', 'css/font-awesome.min.css') }} />
   <link rel="stylesheet" href="{{ 'css/theme_extra.css'|url }}" />
   {%- if config.theme.highlightjs %}
-  {% import 'cdnjs.j2' as cdnjs %}
   <link rel="stylesheet"
         href={{ cdnjs.load('highlight.js', 'styles/github.min.css') }}
   >
