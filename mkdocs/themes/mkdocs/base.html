@@ -32,11 +32,10 @@
       {%- endblock %}
 
       {%- block libs %}
-
-        <script src="{{ 'js/jquery-1.10.2.min.js'|url }}" defer></script>
-        <script src="{{ 'js/bootstrap.min.js'|url }}" defer></script>
-        {%- if config.theme.highlightjs %}
         {% import 'cdnjs.j2' as cdnjs %}
+        <script src={{ cdnjs.load('jquery', 'jquery.min.js') }} defer></script>
+        <script src={{ cdnjs.load('twitter-bootstrap', 'js/bootstrap.min.js') }} defer></script>
+        {%- if config.theme.highlightjs %}
         <script src={{ cdnjs.load('highlight.js', 'highlight.min.js') }}></script>
         {%- for lang in config.theme.hljs_languages %}
         <script src={{ cdnjs.load('highlight.js', 'languages/' + lang + '.min.js') }}></script>
