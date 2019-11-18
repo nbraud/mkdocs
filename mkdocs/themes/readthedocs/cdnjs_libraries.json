@@ -1,1 +1,3 @@
-../mkdocs/cdnjs_libraries.json
+{
+    "highlight.js": "9.12.0"
+}
