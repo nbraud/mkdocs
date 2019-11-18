@@ -45,7 +45,7 @@
   </script>
   {% endif %}
   <script src={{ cdnjs.load('jquery', 'jquery.min.js') }} defer></script>
-  <script src={{ cdnjs.load('modernizr', 'modernizr.min.js') }}" defer></script>
+  <script src={{ cdnjs.load('modernizr', 'modernizr.min.js') }} defer></script>
   {%- if config.theme.highlightjs %}
   <script src={{ cdnjs.load('highlight.js', 'highlight.min.js') }}></script>
   {%- for lang in config.theme.hljs_languages %}
